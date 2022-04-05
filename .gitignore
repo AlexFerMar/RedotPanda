@@ -1,6 +1,9 @@
 # From https://github.com/github/gitignore/blob/master/Gradle.gitignore
 .gradle
 /build/
+settings.gradle
+gradlew.bat
+gradlew
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -106,3 +109,6 @@ Temporary Items
 .apdisk
 /.idea/
 /gradle/
+
+
+
