@@ -1,7 +1,9 @@
 package discordBot;
 
 import discord4j.core.object.entity.Message;
+import discordBotMethods.Get;
 import discordBotMethods.Help;
+import discordBotMethods.List;
 import discordBotMethods.Pong;
 
 import java.util.ArrayList;
@@ -14,7 +16,8 @@ public class TriggerMethods {
         {
             add(new Help());
             add(new Pong());
-
+            add(new Get());
+            add(new List());
         }
     };
 

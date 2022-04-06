@@ -7,8 +7,8 @@ import discordBot.Triggerable;
 
 public class Pong implements Triggerable {
 
-    private final String COMAND="!ping";
-    private final String DESCRIPTION="El bot contestara a este comando poniendo \"Pong\"";
+    private final String COMAND = "!ping";
+    private final String DESCRIPTION = "El bot contestara a este comando poniendo \"Pong\".";
 
     @Override
     public String getCOMAND() {
@@ -21,9 +21,9 @@ public class Pong implements Triggerable {
     }
 
     @Override
-    public void run(String parameter,MessageChannel channel) {
+    public void run(String parameter, MessageChannel channel) {
 
-        if (parameter==null) channel.createMessage("Pong").block();
+        if (parameter == null) channel.createMessage("Pong").block();
 
         else channel.createMessage(EmbedCreateSpec.builder()
                 .color(Color.RED)
