@@ -10,8 +10,8 @@ import java.time.Instant;
 
 public class Help implements Triggerable {
 
-    private final String COMAND ="!help";
-    private final String DESCRIPTION="Comnado de ayuda. Si se escribe \"!help\" sin ningun otro parametro salta una lista de todos los comandos. Si se escribe \"!help !comando\" se mostrara una breve descripcion del mismo (como esta).";
+    private final String COMAND = "!help";
+    private final String DESCRIPTION = "Comnado de ayuda. Si se escribe \"!help\" sin ningun otro parametro salta una lista de todos los comandos. Si se escribe \"!help !comando\" se mostrara una breve descripcion del mismo (como esta).";
 
     @Override
     public String getCOMAND() {
@@ -28,29 +28,27 @@ public class Help implements Triggerable {
 
         EmbedCreateSpec embed;
 
-        if(parameter!=null){
-            Triggerable trigger= TriggerMethods.getTrigger(parameter);
-            if(trigger!=null) {
+        if (parameter != null) {
+            Triggerable trigger = TriggerMethods.getTrigger(parameter);
+            if (trigger != null) {
                 embed = EmbedCreateSpec.builder()
                         .color(Color.SEA_GREEN)
                         .title(trigger.getCOMAND())
                         .description(trigger.getDescription())
                         .build();
-            }
-            else embed = EmbedCreateSpec.builder()
+            } else embed = EmbedCreateSpec.builder()
                     .color(Color.RED)
                     .title("Error")
-                    .description("Comando \""+ parameter+"\" no reconocido ")
+                    .description("Comando \"" + parameter + "\" no reconocido ")
                     .build();
-        }
-        else{
-                String comands="";
-            for (Triggerable x:TriggerMethods.listTrigger) {
+        } else {
+            String comands = "";
+            for (Triggerable x : TriggerMethods.listTrigger) {
 
-                comands+=x.getCOMAND()+", ";
+                comands += x.getCOMAND() + ", ";
 
             }
-            comands=comands.substring(0,comands.length()-2)+".";
+            comands = comands.substring(0, comands.length() - 2) + ".";
 
             embed = EmbedCreateSpec.builder()
                     .color(Color.SEA_GREEN)
