@@ -24,12 +24,11 @@ Y listo, ya está todo preparado para que utilices tu bot de Discord!
 
 - Reacciona ante comandos de texto
 - Utiliza *embeds* de Discord para mandar mensajes informativos o de error
+- Capacidad de listar y mandar las fotos de un directorio local desde donde se lance el programa 
 
 
 
 ## *Roadmap*
-
-- Añadir la capacidad de obtener fotos de un directorio local desde donde se lance el programa
 
 - Mandar en forma de *embed* la predicción del tiempo de una localidad dada
 
