@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class Get implements Triggerable {
 
-    private final String PATH = "src" + File.separator + "main" + File.separator + "resources" + File.separator;
+    private final static String PATH = "src" + java.io.File.separator + "main" + java.io.File.separator + "resources" + java.io.File.separator+ "images" + java.io.File.separator;
 
     private final String COMAND = "!get";
 
