@@ -1,10 +1,7 @@
 package discordBot;
 
 import discord4j.core.object.entity.Message;
-import discordBotMethods.Get;
-import discordBotMethods.Help;
-import discordBotMethods.List;
-import discordBotMethods.Pong;
+import discordBotMethods.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -18,6 +15,8 @@ public class TriggerMethods {
             add(new Pong());
             add(new Get());
             add(new List());
+            add(new GetDrive());
+            add(new ListDrive());
         }
     };
 

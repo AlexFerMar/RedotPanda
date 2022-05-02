@@ -8,6 +8,7 @@ public interface Triggerable {
 
     public String getDescription();
 
+
     public void run(String parameter,MessageChannel channel);
 
 }

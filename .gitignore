@@ -111,4 +111,8 @@ Temporary Items
 /gradle/
 
 
-
+credentials.json
+/tokens/
+/src/main/resources/imageAux.jpg
+/src/main/resources/images/imageAux.jpeg
+/resources/StoredCredential
