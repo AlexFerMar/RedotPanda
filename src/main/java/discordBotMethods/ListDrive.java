@@ -11,7 +11,7 @@ public class ListDrive implements Triggerable {
 
     private final String COMAND = "!listDrive";
 
-    private final String DESCRIPTION = "Comando con el que obtener la lista de imágenes disponibles en la carpeta \" " + ImagesDrive.FOLDER_NAME + "\" de la persona que lanza el comando. Para limitar la visibilidad del bot a los archivos, solo revisará las imágenes de la carpeta \"fotosBot\", recuerda crear la carpeta en tu drive y meter allí las fotos que deseas pasar con el bot. Si quieres visualizar alguna imagen, pon \"!getDrive nombre.extensión\".";
+    private final String DESCRIPTION = "Comando con el que obtener la lista de imágenes disponibles en la carpeta \" " + ImagesDrive.FOLDER_NAME + "\" del usuario linkeado. Si quieres visualizar alguna imagen, pon \"!getDrive nombre.extensión\".";
 
     @Override
     public String getCOMAND() {
@@ -31,7 +31,7 @@ public class ListDrive implements Triggerable {
 
             embed = EmbedCreateSpec.builder()
                     .color(Color.SEA_GREEN)
-                    .title("Lista de imagenes de " + "Username")
+                    .title("Lista de imagenes de Drive")
                     .description(ImagesDrive.imageSearcher())
                     .build();
 

@@ -28,13 +28,13 @@ En la última versión este bot incluye la capacidad de ver el Drive de quien la
 Para poder emplear la funcionalidad de Google Drive deberás dar de alta el proyecto en la consola de [Development de Google](https://developers.google.com/workspace/guides/create-project). Una vez dado de alta el proyecto, necesitarás [habilitar la API de Drive](https://developers.google.com/workspace/guides/enable-apis) y luego configurar el [*OAuth consent*](https://developers.google.com/workspace/guides/configure-oauth-consent).
 Una vez configurado el *OAuth consent*, genera un *json* y colócalo en la carpeta *resources* del programa.
 
-Listo, ahora tus usuarios podrán pasar por Discord imágenes que tengan en su Drive!
+Listo, ahora tus usuarios podrán pasar por Discord imágenes que tengas almacenadas en tu Drive!
 ## Características
 
 - Reacciona ante comandos de texto
 - Utiliza *embeds* de Discord para mandar mensajes informativos o de error.
 - Capacidad de listar y mandar las fotos de un directorio local desde donde se lance el programa.
-- Capacidad de listar y mandar las fotos de una carpeta de Drive del usuario que lance el comando.
+- Capacidad de listar y mandar las fotos de una carpeta de Drive del usuario linkeado.
 
 
 ## *Roadmap*
@@ -70,4 +70,4 @@ Listo, ahora tus usuarios podrán pasar por Discord imágenes que tengan en su D
  public final static String FOLDER_NAME = "fotosBot";
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aunque realices un cambio en la carpeta de búsqueda del bot, los usuarios siguen pudiendo consultar dónde se realiza la búsqueda empleando el comando "!help !listDrive".
+
