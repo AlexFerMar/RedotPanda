@@ -9,7 +9,7 @@ import java.io.File;
 
 public class List implements Triggerable {
 
-    private final static String PATH = "src" + java.io.File.separator + "App" + java.io.File.separator + "resources" + java.io.File.separator + "images" + java.io.File.separator;
+    private final static String PATH = "src" + java.io.File.separator + "main" + java.io.File.separator + "resources" + java.io.File.separator+ "images" + java.io.File.separator;
 
     private final String COMAND = "!list";
 

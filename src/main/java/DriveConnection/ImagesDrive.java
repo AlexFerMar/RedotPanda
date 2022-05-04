@@ -12,10 +12,10 @@ import java.util.List;
 
 public class ImagesDrive {
 
-    private final static String GET_URL = "https://www.googleapis.com/drive/v3/files/";
+
     public final static String FOLDER_NAME = "fotosBot";
     public final static String FILE_NAME = "imageAux.jpeg";
-    private final static String PATH = "src" + java.io.File.separator + "App" + java.io.File.separator + "resources" + java.io.File.separator + "images" + java.io.File.separator;
+    private final static String PATH = "src" + java.io.File.separator + "main" + java.io.File.separator + "resources" + java.io.File.separator+ "images" + java.io.File.separator;
 
     /**
      * Devuelve una lista de las imágenes de drive guardadas en la carpeta especificada en FOLDER_NAME.
