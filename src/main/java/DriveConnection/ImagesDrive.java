@@ -4,9 +4,6 @@ import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
 import com.google.api.services.drive.model.FileList;
 
-import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpResponse;
-
 import java.io.*;
 
 
@@ -15,12 +12,16 @@ import java.util.List;
 
 public class ImagesDrive {
 
-    private final static String GET_URL = "https://www.googleapis.com/drive/v3/files/";
+
     public final static String FOLDER_NAME = "fotosBot";
     public final static String FILE_NAME = "imageAux.jpeg";
     private final static String PATH = "src" + java.io.File.separator + "main" + java.io.File.separator + "resources" + java.io.File.separator+ "images" + java.io.File.separator;
 
-
+    /**
+     * Devuelve una lista de las imágenes de drive guardadas en la carpeta especificada en FOLDER_NAME.
+     *
+     * @return La lista de imágenes en forma de String
+     */
     public static String imageSearcher() {
 
         Drive service;
@@ -28,10 +29,10 @@ public class ImagesDrive {
             service = new DriveService().getService();
         } catch (IOException e) {
             e.printStackTrace();
-            return "Conexion fallida. Permiso denegado por el usuario";
+            return "Conexión fallida. Permiso denegado por el usuario";
         } catch (GeneralSecurityException e) {
             e.printStackTrace();
-            return "Conexion fallida.";
+            return "Conexión fallida.";
         }
 
         FileList result;
@@ -52,16 +53,16 @@ public class ImagesDrive {
                         .setFields("nextPageToken, files(id, name)")
                         .execute();
             else
-                return "Carpeta " + FOLDER_NAME + " no encontrada. Por favor, cree la carpeta en su google drive y añada sus fotos ahi si desea que su bot utilice las fotos almacenadas.";
+                return "Carpeta " + FOLDER_NAME + " no encontrada. Por favor, cree la carpeta en su Google drive y añada sus fotos ahí si desea que su bot utilice las fotos almacenadas.";
         } catch (IOException e) {
             e.printStackTrace();
-            return "Conexion fallida";
+            return "Conexión fallida.";
         }
 
         List<File> files = result.getFiles();
 
         if (files == null || files.isEmpty()) {
-            return "No se han encontrado imagenes dentro de la carpeta " + FOLDER_NAME + " .";
+            return "No se han encontrado imágenes dentro de la carpeta " + FOLDER_NAME + " .";
         } else {
             String fileList = "";
 
@@ -74,6 +75,13 @@ public class ImagesDrive {
 
     }
 
+
+    /**
+     * Busca una foto en la carpeta especificada en FOLDER_NAME y la descarga en una imagen temporal con el nombre registrado en FILE_NAME
+     *
+     * @param filename Nombre de la imagen que se desea descargar de drive.
+     * @return Devuelve "null" si se ha encontrado y descargado la imagen, si no devuelve un mensaje de error para mostrar en un embed
+     */
     public static String downloadFile(String filename) {
 
         Drive service;
@@ -81,10 +89,10 @@ public class ImagesDrive {
             service = new DriveService().getService();
         } catch (IOException e) {
             e.printStackTrace();
-            return "Conexion fallida. Permiso denegado por el usuario";
+            return "Conexión fallida. Permiso denegado por el usuario";
         } catch (GeneralSecurityException e) {
             e.printStackTrace();
-            return "Conexion fallida.";
+            return "Conexión fallida.";
         }
 
         FileList result;
@@ -105,19 +113,16 @@ public class ImagesDrive {
                         .setFields("nextPageToken, files(id, name)")
                         .execute();
             else
-                return "Carpeta " + FOLDER_NAME + " no encontrada. Por favor, cree la carpeta en su google drive y añada sus fotos ahi si desea que su bot utilice las fotos almacenadas.";
+                return "Carpeta " + FOLDER_NAME + " no encontrada. Por favor, cree la carpeta en su Google drive y añada sus fotos ahí si desea que su bot utilice las fotos almacenadas.";
         } catch (IOException e) {
             e.printStackTrace();
-            return "Conexion fallida";
+            return "Conexión fallida";
         }
 
-        String imageID=result.getFiles().get(0).getId();
-        if ( imageID!= Integer.toString(0)) {
-            /*String downloadURL = GET_URL + result.getFiles().get(0).getId();
-            */try {
-                /*HttpResponse resp =
-                        service.getRequestFactory().buildGetRequest(new GenericUrl(downloadURL))
-                                .execute();*/
+        String imageID = result.getFiles().get(0).getId();
+        if (imageID != Integer.toString(0)) {
+
+            try {
 
                 OutputStream outputStream = new FileOutputStream(PATH + FILE_NAME);
                 service.files().get(imageID).executeMediaAndDownloadTo(outputStream);
@@ -129,11 +134,11 @@ public class ImagesDrive {
 
             } catch (IOException e) {
                 e.printStackTrace();
-                return "Conexion fallida";
+                return "Conexión fallida";
             }
-         } else {
-             //The file doesn't have any content stored on Drive.
-            return "Archivo vacio o corrupto";
+        } else {
+            //The file doesn't have any content stored on Drive.
+            return "Archivo vacío o corrupto";
         }
 
     }

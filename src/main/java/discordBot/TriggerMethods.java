@@ -8,7 +8,9 @@ import java.util.Collection;
 
 public class TriggerMethods {
 
-
+    /**
+     * Lista de todos los triggers que el bot detectara en el chat
+     */
     public static Collection<Triggerable> listTrigger = new ArrayList<Triggerable>() {
         {
             add(new Help());
@@ -20,6 +22,12 @@ public class TriggerMethods {
         }
     };
 
+    /**
+     * Revisa si el mensaje
+     *
+     * @param message
+     * @return
+     */
     public static String[] splitComand(Message message) {
 
 

@@ -13,7 +13,7 @@ public class List implements Triggerable {
 
     private final String COMAND = "!list";
 
-    private final String DESCRIPTION = "Comando con el que obtener la lista de imagenes disponibles. Si quieres visualizar alguna imagen pon \"!get nombre.extension\".";
+    private final String DESCRIPTION = "Comando con el que obtener la lista de imágenes disponibles. Si quieres visualizar alguna imagen, pon \"!get nombre.extensión\".";
 
     @Override
     public String getCOMAND() {
@@ -34,7 +34,7 @@ public class List implements Triggerable {
 
             String fileList = "";
 
-            //En esta linea, el new File(PATH).list(), genera una array de String con todos los ficheros en la direccion dada.
+            //En esta linea, el new File(PATH).list(), genera una array de String con todos los ficheros en la dirección dada.
             for (String fileName : new File(PATH).list()) {
 
                 fileList += fileName + " ,";
@@ -45,14 +45,14 @@ public class List implements Triggerable {
 
             embed = EmbedCreateSpec.builder()
                     .color(Color.SEA_GREEN)
-                    .title("Lista de imagenes")
+                    .title("Lista de imágenes")
                     .description(fileList)
                     .build();
 
         } else embed = EmbedCreateSpec.builder()
                 .color(Color.RED)
                 .title("Error")
-                .description("El comando \"!list\" no lleva parametros")
+                .description("El comando \"!list\" no lleva parámetros")
                 .build();
 
         channel.createMessage(embed).block();

@@ -11,7 +11,7 @@ import java.time.Instant;
 public class Help implements Triggerable {
 
     private final String COMAND = "!help";
-    private final String DESCRIPTION = "Comnado de ayuda. Si se escribe \"!help\" sin ningun otro parametro salta una lista de todos los comandos. Si se escribe \"!help !comando\" se mostrara una breve descripcion del mismo (como esta).";
+    private final String DESCRIPTION = "Comando de ayuda. Si se escribe \"!help\" sin ningún otro parametro, salta una lista de todos los comandos. Si se escribe \"!help !comando\" se mostrara una breve descripción del mismo (como esta).";
 
     @Override
     public String getCOMAND() {
@@ -39,7 +39,7 @@ public class Help implements Triggerable {
             } else embed = EmbedCreateSpec.builder()
                     .color(Color.RED)
                     .title("Error")
-                    .description("Comando \"" + parameter + "\" no reconocido ")
+                    .description("Comando \"" + parameter + "\" no reconocido")
                     .build();
         } else {
             String comands = "";

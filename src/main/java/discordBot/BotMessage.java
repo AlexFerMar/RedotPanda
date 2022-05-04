@@ -9,6 +9,11 @@ import discord4j.rest.util.Color;
 
 public class BotMessage {
 
+    /**
+     * Vigila los canales de Discord sobre los que tiene permiso para revisar si algún mensaje contiene un comando del programa
+     *
+     * @param gateway Una GatewayDiscordClient que contiene todos los datos necesarios para que el bot funcione
+     */
     public static void sendMessage(GatewayDiscordClient gateway) {
 
         gateway.on(MessageCreateEvent.class).subscribe(event -> {
@@ -17,11 +22,11 @@ public class BotMessage {
 
             if (message.getContent().startsWith("!")) {
 
-                String[] comand= TriggerMethods.splitComand(message);
+                String[] comand = TriggerMethods.splitComand(message);
 
                 final MessageChannel channel = message.getChannel().block();
 
-                if (comand.length<=2){
+                if (comand.length <= 2) {
 
                     Triggerable triggerable = TriggerMethods.getTrigger(comand[0]);
 
@@ -29,14 +34,12 @@ public class BotMessage {
                         channel.createMessage(EmbedCreateSpec.builder()
                                 .color(Color.RED)
                                 .title("Comando no reconocido")
-                                .addField("Si necesitas una lista de comandos escrible:", "\"!help\"", false)
-                                .addField("Si necesitas informacion de un comando concreto escribe:", "\"!help !comando\"", false)
+                                .addField("Si necesitas una lista de comandos escribe:", "\"!help\"", false)
+                                .addField("Si necesitas información de un comando concreto, escribe:", "\"!help !comando\"", false)
                                 .build()).block();
 
                     else triggerable.run(comand[1], channel);
-                }
-
-                else channel.createMessage(EmbedCreateSpec.builder()
+                } else channel.createMessage(EmbedCreateSpec.builder()
                         .color(Color.RED)
                         .title("Comando Incorrecto")
                         .description("Los comandos solo tienen dos estructuras:")

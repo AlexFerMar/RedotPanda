@@ -14,7 +14,7 @@ public class GetDrive implements Triggerable {
 
     private final String COMAND = "!getDrive";
 
-    private final String DESCRIPTION = "Comando con el que puedes ver una imagen disponible en la carpeta \"" + ImagesDrive.FOLDER_NAME + "\" de la persona que lanza el comando. Para ello solo deberas escribir \"!get nombre.extension\". Si deseas ver la lista de imagenes disponibles, emplea el comando \"!listDrive\". ";
+    private final String DESCRIPTION = "Comando con el que puedes ver una imagen disponible en la carpeta \"" + ImagesDrive.FOLDER_NAME + "\" de la persona que lanza el comando. Para ello solo deberás escribir \"!get nombre.extensión\". Si deseas ver la lista de imágenes disponibles, emplea el comando \"!listDrive\". ";
 
     @Override
     public String getCOMAND() {
@@ -50,7 +50,7 @@ public class GetDrive implements Triggerable {
             channel.createMessage(EmbedCreateSpec.builder()
                     .color(Color.RED)
                     .title("Error")
-                    .description("El comando \"!getDrive\" debe llevar como parametro el nombre de la imagen a mostrar. Param más ayuda emplea el comando \"!help !getDrive\".")
+                    .description("El comando \"!getDrive\" debe llevar como parámetro el nombre de la imagen a mostrar. Para más ayuda emplea el comando \"!help !getDrive\".")
                     .build()).block();
 
 

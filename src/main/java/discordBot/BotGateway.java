@@ -5,7 +5,7 @@ import discord4j.core.GatewayDiscordClient;
 
 public class BotGateway {
 
-    //Creacion del bot mediante un token obtenido de la pagina de developer de discord
+    //Creación del bot mediante un token obtenido de la página de developer de Discord
     private final String TOKEN = "TOKEN";
 
     private GatewayDiscordClient gateway = null;
@@ -13,6 +13,7 @@ public class BotGateway {
     public GatewayDiscordClient getGateway() {
         return gateway;
     }
+
 
     public BotGateway() {
 

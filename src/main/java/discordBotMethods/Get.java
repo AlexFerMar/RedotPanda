@@ -1,14 +1,10 @@
 package discordBotMethods;
 
-import discord4j.common.store.action.read.ReadActions;
-import discord4j.core.object.entity.Attachment;
-import discord4j.core.object.entity.channel.GuildMessageChannel;
 import discord4j.core.object.entity.channel.MessageChannel;
 import discord4j.core.spec.EmbedCreateSpec;
 import discord4j.core.spec.MessageCreateSpec;
 import discord4j.rest.util.Color;
 import discordBot.Triggerable;
-import reactor.core.publisher.Mono;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,7 +17,7 @@ public class Get implements Triggerable {
 
     private final String COMAND = "!get";
 
-    private final String DESCRIPTION = "Comando con el que puedes ver una imagen almacenada en el bot poniendo \"!get nombre.extension\". Si deseas ver la lista de imagenes disponibles, emplea el comando \"!list\". ";
+    private final String DESCRIPTION = "Comando con el que puedes ver una imagen almacenada en el bot poniendo \"!get nombre.extensión\". Si deseas ver la lista de imágenes disponibles, emplea el comando \"!list\". ";
 
     @Override
     public String getCOMAND() {
@@ -72,14 +68,14 @@ public class Get implements Triggerable {
             } else embed = EmbedCreateSpec.builder()
                     .color(Color.RED)
                     .title("Error")
-                    .description("El archivo \"" + parameter + "\" no existe. Para ver una lista de los archivos disponibles emplea el comando \"!list\".")
+                    .description("El archivo \"" + parameter + "\" no existe. Para ver una lista de los archivos disponibles, emplea el comando \"!list\".")
                     .build();
 
         } else
             embed = EmbedCreateSpec.builder()
                     .color(Color.RED)
                     .title("Error")
-                    .description("El comando \"!get\" debe llevar como parametro el nombre de la imagen a mostrar. Param más ayuda emplea el comando \"!help !get\".")
+                    .description("El comando \"!get\" debe llevar como parámetro el nombre de la imagen a mostrar. Para más ayuda emplea el comando \"!help !get\".")
                     .build();
 
 
