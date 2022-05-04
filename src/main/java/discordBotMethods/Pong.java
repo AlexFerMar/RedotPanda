@@ -8,7 +8,7 @@ import discordBot.Triggerable;
 public class Pong implements Triggerable {
 
     private final String COMAND = "!ping";
-    private final String DESCRIPTION = "El bot contestara a este comando poniendo \"Pong\".";
+    private final String DESCRIPTION = "El bot contestará a este comando poniendo \"Pong\".";
 
     @Override
     public String getCOMAND() {
@@ -28,7 +28,7 @@ public class Pong implements Triggerable {
         else channel.createMessage(EmbedCreateSpec.builder()
                 .color(Color.RED)
                 .title("Error")
-                .description("El comando \"!ping\" no lleva parametros")
+                .description("El comando \"!ping\" no lleva parámetros")
                 .build()).block();
     }
 }

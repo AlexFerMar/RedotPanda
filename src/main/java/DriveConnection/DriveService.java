@@ -1,4 +1,5 @@
 package DriveConnection;
+
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
@@ -45,7 +46,12 @@ public class DriveService {
 
     private Drive service = null;
 
-
+    /**
+     * Sirve para inicializar el objeto Drive
+     *
+     * @throws IOException
+     * @throws GeneralSecurityException
+     */
     public DriveService() throws IOException, GeneralSecurityException {
 
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
