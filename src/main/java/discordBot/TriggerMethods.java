@@ -19,6 +19,7 @@ public class TriggerMethods {
             add(new List());
             add(new GetDrive());
             add(new ListDrive());
+            add(new Pdf());
         }
     };
 
